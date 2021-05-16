@@ -37,8 +37,10 @@ public class FakePersonDataAccessService implements PersonDao {
                 .findFirst();
     }
 
+    @Modifying
+    @Query(value = "delete from Person where ID=:id", nativeQuery = true)
     @Override
-    public int deletePersonById(int id) {
+    public int deletePersonById(@Param("int") int id) {
         Optional<Person> personMaybe = selectPersonById(id);
         if(personMaybe.isPresent()){
             DB.remove(personMaybe.get());
@@ -47,8 +49,11 @@ public class FakePersonDataAccessService implements PersonDao {
         return 0;
     }
 
+
+    @Modifying
+    @Query(value = "update Person set ID=:id", nativeQuery = true)
     @Override
-    public int updatePersonById(int id, Person update) {
+    public int updatePersonById(@Param("id") int id, Person update) {
         return selectPersonById(id)
                 .map(person->{
                     int indexOfPersonUpdate = DB.indexOf(person);
