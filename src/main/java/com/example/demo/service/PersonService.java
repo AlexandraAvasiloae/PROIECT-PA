@@ -36,9 +36,7 @@ public class PersonService {
         return personDao.selectPersonById(id);
     }
 
-    @Modifying
-    @Query("DELETE FROM Person p where p.id=:id")
-    public int deletePerson(@Param("id") int id){
+    public int deletePerson(int id){
         return personDao.deletePersonById(id);
     }
 
