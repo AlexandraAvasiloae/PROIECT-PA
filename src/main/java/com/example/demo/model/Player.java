@@ -1,33 +1,30 @@
 package com.example.demo.model;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "PERSON")
+@Table(name = "PLAYERS")
 
-public class Person {
+public class Player {
 
     @Id
     private int id;
     private String name;
+    private int scor;
 
-
-    public Person(@JsonProperty("id") int id,
+    public Player(@JsonProperty("id") int id,
                   @JsonProperty("name") String name) {
         this.id = id;
         this.name = name;
     }
-
-    public Person() {
+    public Player(){
 
     }
 
@@ -52,5 +49,14 @@ public class Person {
         this.name=name;
     }
 
+    @Basic
+    @Column(name="scor")
+    public int getScor() {
+        return scor;
+    }
+
+    public void setScor(int scor) {
+        this.scor = scor;
+    }
 
 }
