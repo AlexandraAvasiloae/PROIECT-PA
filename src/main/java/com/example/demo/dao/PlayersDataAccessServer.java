@@ -11,6 +11,7 @@ import java.util.Optional;
 public class PlayersDataAccessServer implements PlayerDAO {
     private static List<Player> DB = new ArrayList<>();
 
+
     @Override
     public int insertPlayer(@Param("id") int id, @Param("name") String name) {
         DB.add(new Player(id, name));

@@ -15,6 +15,10 @@ public class RandomLetters {
     public final int minLetters=5;
     public final int maxLetters=12;
 
+    /**
+     * constructor
+     * the list of letters will contains consonants and vowels
+     */
     public RandomLetters() {
         numberLetters = (int) Math.floor(Math.random() * (maxLetters - minLetters + 1) + minLetters);
         Random rand1 = new Random();

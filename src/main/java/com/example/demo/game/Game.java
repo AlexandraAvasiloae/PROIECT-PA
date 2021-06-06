@@ -6,6 +6,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Game {
+
+    /**
+     * this method verify if the word chosen by player is a romanian word or not
+     * the file Listacuvinte.txt contains 169333 common romanian words
+     * @param filePath
+     * @param searchQuery
+     * @return
+     * @throws IOException
+     */
     public static int searchUsingBufferedReader(String filePath, String searchQuery) throws IOException {
         searchQuery = searchQuery.trim();
         BufferedReader br = null;
@@ -33,6 +42,14 @@ public class Game {
         return -1;
     }
 
+    /**
+     * this method verify if the chosen word is correct or not
+     * the word is correct if and only if the word contains words from the list of letters and the word is a romanian word
+     * @param chosenLetters
+     * @param word
+     * @return
+     * @throws IOException
+     */
     public String Game(String chosenLetters, String word) throws IOException{
         for (int i = 0; i < word.length(); i++) {
             if (chosenLetters.indexOf(word.charAt(i)) == -1) {
