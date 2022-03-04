@@ -8,4 +8,5 @@ servicii pentru obtinerea definitilor, sinonimelor (Dex), suport pentru anumite
 jocuri, etc.
     (not done)Implementarea unui joc care foloseste aceste servicii cu interfata JavaFX
 
+Team:Avasiloae Alexandra and Petrescu Bianca
 ```
