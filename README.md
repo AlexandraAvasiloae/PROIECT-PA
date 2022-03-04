@@ -1,8 +1,3 @@
-#Lab 11
-
-```
-Team: Avasiloae Alexandra and Petrescu Bianca
-```
 
 ##Project - Word Games
 ```
